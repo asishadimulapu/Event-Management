@@ -16,7 +16,7 @@ app.use(express.json()); // Parse JSON bodies
 
 // Set Pug as the templating engine
 app.set('view engine', 'jade');
-app.set('views', path.join(__dirname, 'views')); // Set the views directory
+app.set('views', path.join(__dirname,'app_server' ,'views')); // Set the views directory
 
 // Serve static files (like CSS)
 app.use(express.static(path.join(__dirname, 'public'))); // Ensure your CSS folder is correctly named
