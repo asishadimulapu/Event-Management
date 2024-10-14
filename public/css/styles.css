@@ -1,0 +1,104 @@
+/* General Reset and Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure padding and borders are included in element's total width and height */
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9f5e9; /* Fallback color */
+    background-image: url('/images/hand-drawn-olive-green-background_23-2149724861.avif'); /* Background image */
+    background-size: cover; /* Ensure the image covers the entire page */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Make background stay in place during scrolling */
+    color: white; /* Set all text to white */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #4CAF50; /* Dark green */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    z-index: 1; /* Keep the header on top */
+    position: relative;
+  }
+  
+  nav {
+    margin-top: 10px;
+  }
+  
+  nav a {
+    margin-right: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth color transition for links */
+  }
+  
+  nav a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #dcdcdc; /* Lighter color on hover for emphasis */
+  }
+  
+  /* Main Content Styles */
+  main {
+    background-color: rgba(255, 255, 255, 0.2); /* Slight transparency for main section */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    max-width: 600px; /* Set a maximum width for the main content */
+    margin: 40px auto; /* Center the main content */
+  }
+  
+  /* Headings */
+  h2 {
+    color: white; /* Set heading color to white */
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  /* Paragraph Styles */
+  p {
+    font-size: 1.2rem; /* Larger font for readability */
+    color: white; /* White text for contrast */
+    margin-bottom: 15px; /* Spacing between paragraphs */
+    text-align: center; /* Center the paragraph text */
+  }
+  
+  /* Footer Styles */
+  footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    color: #999;
+  }
+  
+  /* Responsive Design for Mobile */
+  @media (max-width: 768px) {
+    header {
+      padding: 15px;
+      font-size: 1.2rem;
+    }
+  
+    main {
+      padding: 30px;
+    }
+  
+    h2 {
+      font-size: 1.75rem;
+    }
+  
+    nav a {
+      margin-right: 10px;
+    }
+  }
+  

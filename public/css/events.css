@@ -1,0 +1,177 @@
+/* General Reset and Body Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding and borders in total width and height */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #e9f5e9; /* Fallback color */
+  background-image: url('/images/hand-drawn-olive-green-background_23-2149724861.avif'); /* Background image */
+  background-size: cover; /* Cover the entire page */
+  background-position: center; /* Center the image */
+  background-attachment: fixed; /* Fixed background during scrolling */
+  color: white; /* Set text to white */
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header Styles */
+header {
+  background-color: #4CAF50; /* Dark green */
+  color: white; /* White text */
+  padding: 20px; /* Padding for header */
+  text-align: center; /* Center the text */
+  z-index: 1; /* Keep the header on top */
+  position: relative; /* Position relative for z-index to work */
+}
+
+nav {
+  margin-top: 10px; /* Space above navigation */
+}
+
+nav a {
+  margin-right: 15px; /* Space between nav links */
+  color: white; /* White link color */
+  text-decoration: none; /* No underline */
+  font-weight: bold; /* Bold links */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+nav a:hover {
+  text-decoration: underline; /* Underline on hover */
+  color: #dcdcdc; /* Lighter color on hover */
+}
+
+/* Main Form Container */
+form {
+  background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
+  padding: 40px; /* Padding inside form */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  max-width: 400px; /* Max width of the form */
+  margin: 40px auto; /* Center the form */
+}
+
+/* Form Headings */
+h2 {
+  color: white; /* White heading color */
+  text-align: center; /* Center the heading */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+  margin-bottom: 25px; /* Space below heading */
+  font-size: 2rem; /* Font size for headings */
+  font-weight: bold; /* Bold headings */
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="date"],
+input[type="checkbox"] {
+  width: 100%; /* Full width for inputs */
+  padding: 12px; /* Padding inside inputs */
+  margin-bottom: 20px; /* Space below inputs */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Transition effects */
+  color: #333; /* Darker input text */
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+  border-color: #4CAF50; /* Dark green border on focus */
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4); /* Shadow on focus */
+}
+
+/* Labels */
+label {
+  font-size: 1rem; /* Font size for labels */
+  font-weight: bold; /* Bold labels */
+  display: block; /* Block display for labels */
+  margin-bottom: 8px; /* Space below labels */
+  color: white; /* White label text */
+}
+
+/* Button */
+button {
+  background-color: #4CAF50; /* Dark green */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 12px 20px; /* Padding inside button */
+  font-size: 1.1rem; /* Font size */
+  cursor: pointer; /* Pointer cursor */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s, transform 0.3s; /* Transition effects */
+  width: 100%; /* Full width for the button */
+  margin-top: 10px; /* Space above button */
+}
+
+button:hover {
+  background-color: #45a049; /* Lighter green on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Upcoming Events Section */
+h3 {
+  color: white; /* White heading color */
+  text-align: center; /* Center the heading */
+  margin-top: 40px; /* Space above heading */
+}
+
+/* Event List Styles */
+ul#event-list {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* No padding */
+}
+
+ul#event-list li {
+  background-color: rgba(255, 255, 255, 0.3); /* Slightly transparent white for list items */
+  padding: 15px; /* Padding inside list items */
+  margin: 10px 0; /* Space between items */
+  border-radius: 5px; /* Rounded corners */
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Space between content */
+  align-items: center; /* Center items vertically */
+}
+
+ul#event-list li button {
+  background-color: #f44336; /* Red for delete button */
+  padding: 5px 10px; /* Padding inside button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  color: white; /* White text */
+  cursor: pointer; /* Pointer cursor */
+}
+
+ul#event-list li button:hover {
+  background-color: #e53935; /* Darker red on hover */
+}
+
+/* Footer */
+footer {
+  text-align: center; /* Center footer text */
+  padding: 10px; /* Padding inside footer */
+  margin-top: 20px; /* Space above footer */
+  color: #999; /* Light gray text */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  header {
+    padding: 15px; /* Reduce padding */
+    font-size: 1.2rem; /* Smaller font size */
+  }
+
+  nav a {
+    margin-right: 10px; /* Reduce space between nav links */
+  }
+
+  h2 {
+    font-size: 1.75rem; /* Smaller heading size */
+  }
+
+  form {
+    padding: 30px; /* Reduce padding in form */
+  }
+}

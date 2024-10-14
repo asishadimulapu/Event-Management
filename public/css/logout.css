@@ -1,0 +1,118 @@
+/* General Reset and Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and borders in total width and height */
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9f5e9; /* Fallback color */
+    background-image: url('/public/images/hand-drawn-olive-green-background_23-2149724861.avif'); /* Background image for logout page */
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Fixed background during scrolling */
+    color: white; /* Set text to white */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #4CAF50; /* Dark green */
+    color: white; /* White text */
+    padding: 20px; /* Padding for header */
+    text-align: center; /* Center the text */
+    z-index: 1; /* Keep the header on top */
+    position: relative; /* Position relative for z-index to work */
+  }
+  
+  nav {
+    margin-top: 10px; /* Space above navigation */
+  }
+  
+  nav a {
+    margin-right: 15px; /* Space between nav links */
+    color: white; /* White link color */
+    text-decoration: none; /* No underline */
+    font-weight: bold; /* Bold links */
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  nav a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #dcdcdc; /* Lighter color on hover */
+  }
+  
+  /* Logout Container */
+  main {
+    text-align: center; /* Center the content */
+    padding: 50px 20px; /* Padding around the content */
+  }
+  
+  h2 {
+    color: white; /* White heading color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+    margin-bottom: 20px; /* Space below heading */
+    font-size: 2rem; /* Font size for headings */
+    font-weight: bold; /* Bold headings */
+  }
+  
+  p {
+    color: white; /* White text */
+    font-size: 1.2rem; /* Larger font size for text */
+    margin-bottom: 20px; /* Space below paragraph */
+  }
+  
+  /* Button for manual logout or redirect */
+  button {
+    background-color: #4CAF50; /* Dark green */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 12px 20px; /* Padding inside button */
+    font-size: 1.1rem; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Transition effects */
+    width: 100%; /* Full width for the button */
+    max-width: 200px; /* Limit the button's max width */
+    margin: 20px auto; /* Center the button */
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Lighter green on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center; /* Center footer text */
+    padding: 10px; /* Padding inside footer */
+    margin-top: 20px; /* Space above footer */
+    color: #999; /* Light gray text */
+  }
+  
+  /* Responsive Design for Mobile */
+  @media (max-width: 768px) {
+    header {
+      padding: 15px; /* Reduce padding */
+      font-size: 1.2rem; /* Smaller font size */
+    }
+  
+    nav a {
+      margin-right: 10px; /* Reduce space between nav links */
+    }
+  
+    h2 {
+      font-size: 1.75rem; /* Smaller heading size */
+    }
+  
+    main {
+      padding: 30px 10px; /* Reduce padding in main content */
+    }
+  
+    button {
+      width: 100%; /* Full width for mobile */
+    }
+  }
+  

@@ -1,0 +1,55 @@
+doctype html
+html
+    head
+        title Register
+        link(rel="stylesheet", href="/css/register.css")
+    body
+        header
+            h1 Event Management App
+            nav
+                a(href="/") Home
+                a(href="/register") Register
+                a(href="/login") Login
+                a(href="/about") About
+        main
+            h2 Register
+            form(action="/api/users/register", method="POST")
+                label(for="name") Name:
+                input(type="text", name="name", required)
+                br
+                label(for="email") Email:
+                input(type="email", name="email", required)
+                br
+                label(for="password") Password:
+                input(type="password", name="password", required)
+                br
+                button(type="submit") Register
+
+            //- Existing User Prompt
+            p Already have an account? 
+                a(href="/login") Login here
+        script.
+            document.querySelector('form').addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const name = document.querySelector('input[name="name"]').value;
+                const email = document.querySelector('input[name="email"]').value;
+                const password = document.querySelector('input[name="password"]').value;
+
+                const response = await fetch('/api/users/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email, password }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('Registration successful! Please login.');
+                    window.location.href = '/login'; // Redirect to login page
+                } else {
+                    alert(data.message);
+                }
+            });

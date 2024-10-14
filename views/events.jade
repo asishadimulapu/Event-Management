@@ -1,0 +1,117 @@
+doctype html
+html
+  head
+    title Manage Events
+    link(rel='stylesheet', href='/css/events.css')
+  body
+    header
+      h1 Event Management App
+      nav
+        a.btn(href='/') Home
+        a(href='/register') Register
+        a(href='/login') Login
+        a(href='/about') About
+        a(href='/logout') logout
+
+    main
+      h2 Manage Events
+      
+      // Event creation form
+      form(action="/api/events", method="POST")
+        label(for="title") Event Title:
+        input(type="text", name="title", required)
+        br
+        label(for="location") Location:
+        input(type="text", name="location", required)
+        br
+        label(for="date") Date:
+        input(type="date", name="date", required)
+        br
+        label(for="remind") Remind:
+        input(type="checkbox", name="remind")
+        br
+        button(type="submit") Add Event
+
+      // Section to display upcoming events
+      h3 Upcoming Events
+      ul#event-list
+        // List will be populated with JavaScript
+
+    footer
+      p &copy; 2024 Event Management App
+      
+    script.
+      async function fetchEvents() {
+          const response = await fetch('/api/events');
+          const events = await response.json();
+          const eventList = document.getElementById('event-list');
+          
+          // Clear the list before populating
+          eventList.innerHTML = '';
+
+          // Check if events are returned
+          if (events.length === 0) {
+              const li = document.createElement('li');
+              li.textContent = 'No events found.';
+              eventList.appendChild(li);
+          }
+
+          events.forEach(event => {
+              const li = document.createElement('li');
+              li.textContent = `${event.title} - ${event.location} on ${new Date(event.date).toLocaleDateString()}`;
+
+              // Create a delete button
+              const deleteButton = document.createElement('button');
+              deleteButton.textContent = 'Delete';
+              deleteButton.onclick = () => deleteEvent(event._id); // Call delete function
+              li.appendChild(deleteButton); // Append the button to the list item
+
+              eventList.appendChild(li);
+          });
+      }
+
+      async function deleteEvent(id) {
+          const response = await fetch(`/api/events/${id}`, {
+              method: 'DELETE',
+          });
+
+          if (response.ok) {
+              alert('Event deleted successfully!');
+              fetchEvents(); // Refresh the event list
+          } else {
+              const data = await response.json();
+              alert(data.message || 'Error deleting event.');
+          }
+      }
+
+      // Call the function to fetch events when the page loads
+      window.onload = fetchEvents;
+
+      // Event listener for form submission
+      document.querySelector('form').addEventListener('submit', async (event) => {
+          event.preventDefault();
+
+          const title = document.querySelector('input[name="title"]').value;
+          const location = document.querySelector('input[name="location"]').value;
+          const date = document.querySelector('input[name="date"]').value;
+          const remind = document.querySelector('input[name="remind"]').checked;
+
+          const response = await fetch('/api/events', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ title, location, date, remind }),
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+              alert('Event added successfully!');
+              fetchEvents(); // Refresh the event list
+              // Clear the form after submission
+              document.querySelector('form').reset();
+          } else {
+              alert(data.message);
+          }
+      });

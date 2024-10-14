@@ -1,0 +1,51 @@
+doctype html
+html
+    head
+        title Login
+        link(rel="stylesheet", href="/css/login.css")
+    body
+        header
+            h1 Event Management App
+            nav
+                a(href="/") Home
+                a(href="/register") Register
+                a(href="/login") Login
+                a(href="/about") About
+        main
+            h2 Login
+            form(action="/api/users/login", method="POST")
+                label(for="email") Email:
+                input(type="email", name="email", required)
+                br
+                label(for="password") Password:
+                input(type="password", name="password", required)
+                br
+                button(type="submit") Login
+
+            //- New User Prompt
+            p Are you a new user? 
+                a(href="/register") Register here
+        script.
+            document.querySelector('form').addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const email = document.querySelector('input[name="email"]').value;
+                const password = document.querySelector('input[name="password"]').value;
+
+                const response = await fetch('/api/users/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    localStorage.setItem('token', data.token);
+                    window.location.href = data.redirectUrl;
+                } else {
+                    alert(data.message);
+                }
+            });

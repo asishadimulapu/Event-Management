@@ -1,0 +1,8 @@
+doctype html
+html
+    head
+        title Logout
+    body
+        script.
+            localStorage.setItem("token", "");
+            window.location.href = '/login';
