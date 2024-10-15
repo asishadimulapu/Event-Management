@@ -1,0 +1,106 @@
+/* General Reset and Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9f5e9;
+    background-image: url('/images/hand-drawn-olive-green-background_23-2149724861.avif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+  }
+  
+  nav {
+    margin-top: 10px;
+  }
+  
+  nav a {
+    margin-right: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+    color: #dcdcdc;
+  }
+  
+  /* Upcoming Events Section */
+  h3 {
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  /* Event List Styles */
+  ul#event-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul#event-list li {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  ul#event-list li button {
+    background-color: #f44336;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  ul#event-list li button:hover {
+    background-color: #e53935;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    color: #999;
+  }
+  
+  /* Responsive Design for Mobile */
+  @media (max-width: 768px) {
+    header {
+      padding: 15px;
+      font-size: 1.2rem;
+    }
+  
+    nav a {
+      margin-right: 10px;
+    }
+  
+    h3 {
+      font-size: 1.75rem;
+    }
+  }
+  
