@@ -61,7 +61,9 @@ app.get('/events', (req, res) => {
 app.get('/logout', (req, res) => {
     res.render('logout'); // Render the `logout.jade` file
 });
-
+app.get('/upcoming', (req, res) => {
+    res.render('upcoming');  // Renders the upcoming.pug file
+  });
 // API Routes
 app.use('/api/users', userRoutes); // User-related routes
 app.use('/api/events', eventRoutes); // Event-related routes
